@@ -1,4 +1,4 @@
-# Howla at Me
+# Howlla at Me
 Red Jaguars message board
 
 ## Team
