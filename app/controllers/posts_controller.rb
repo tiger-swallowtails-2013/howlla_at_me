@@ -1,8 +1,9 @@
-class PostsController < ActionController::Base
+class PostsController < ApplicationController
   def create
-    Post.create(title: params[:title], description: params[:description])
+    Post.create(params[:post])
   end
 
   def new
+    @post = Post.new
   end
 end
