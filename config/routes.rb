@@ -4,6 +4,8 @@ Howlla::Application.routes.draw do
   end
 
   resources :users
+
+  match '/' => 'index#show'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
