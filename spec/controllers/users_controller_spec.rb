@@ -7,8 +7,13 @@ describe UsersController do
   end
 
   it "creates user when sign up form is submitted" do
-    expect{
-      post :create
+    expect {
+      post :create, {
+        :first_name => 'First name',
+        :last_name  => 'Last name',
+        :email      => 'email@example.com',
+        :password   => 'password',
+      }
     }.to change(User, :count).by(1)
   end
 end
