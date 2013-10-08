@@ -33,7 +33,6 @@ describe Post, :type => :request do
     expect(response).to render_template(:new)
     expect(response.body).to match(/New Post/i)
   end
-
 end
 
 feature Post do
