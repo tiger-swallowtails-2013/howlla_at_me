@@ -11,13 +11,15 @@ describe IndexController, :type => :request do
   render_views
 
   let (:post1) { FactoryGirl.create(:post) }
-  let (:post2) { FactoryGirl.create(:post, {:title => "different"}) }
+  let (:post2) { FactoryGirl.create(:post, { :title => "different" }) }
 
   context "Accessing the home page" do
 
     it "displays a list of posts including the most recent post" do
+      post2
       get :show
-      expect(response).to render_template("show")
+      expect(response).to render_template(:show)
+      expect(response.body).to match(post2.title)
     end
 
     it "displays list of posts in descending order" do
