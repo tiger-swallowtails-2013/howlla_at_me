@@ -5,4 +5,10 @@ describe UsersController do
     get :new
     expect(response).to render_template("new")
   end
+
+  it "creates user when sign up form is submitted" do
+    expect{
+      post :create
+    }.to change(User, :count).by(1)
+  end
 end
