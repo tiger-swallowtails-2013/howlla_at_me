@@ -23,6 +23,7 @@ end
 gem 'jquery-rails'
 
 group :development, :test do
+  gem 'shoulda-matchers'
   gem 'rspec-rails', '~> 2.0'
   gem 'capybara'
   gem 'factory_girl_rails'

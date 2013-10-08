@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-feature Post do
+feature 'Post Feature' do
   scenario "may be created by guest" do
     visit '/posts/new'
 
