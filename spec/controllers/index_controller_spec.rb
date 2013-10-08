@@ -7,23 +7,23 @@ FactoryGirl.define do
   end
 end
 
-describe 'Index', :type => :request  do
+describe IndexController, :type => :request do
+  render_views
 
   let (:post1) { FactoryGirl.create(:post) }
   let (:post2) { FactoryGirl.create(:post, {:title => "different"}) }
 
-  context "on vititing the home page" do
+  context "Accessing the home page" do
 
     it "displays a list of posts including the most recent post" do
-      post1
-      get '/'
-      expect(response.body).to match('Diz iz my titlez')
+      get :show
+      expect(response).to render_template("show")
     end
 
     it "displays list of posts in descending order" do
       post1
       post2
-      get '/'
+      get :show
       expect(response.body).to match(/different.*Diz/m)
     end
   end
