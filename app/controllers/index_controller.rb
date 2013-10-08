@@ -1,5 +1,5 @@
 class IndexController < ActionController::Base
   def show
-    @posts = Post.all
+    @posts = Post.order('created_at DESC')
   end
 end
