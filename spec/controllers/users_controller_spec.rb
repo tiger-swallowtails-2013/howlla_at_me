@@ -16,4 +16,12 @@ describe UsersController do
       }
     }.to change(User, :count).by(1)
   end
+
+  context "Guest", :type => :request do
+    it "can see create new post link" do
+      get '/'
+      expect(response).to render_template(:show)
+      expect(response.body).to match(/New Post/)
+    end
+  end
 end

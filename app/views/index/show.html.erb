@@ -1,5 +1,2 @@
 <h1>Red Jaguars</h1>
 <%= link_to 'New Post', new_post_path %>
-<% Post.all.each do |post| %>
-  <%=link_to "#{post.title}", post_path %>
-<% end %>
