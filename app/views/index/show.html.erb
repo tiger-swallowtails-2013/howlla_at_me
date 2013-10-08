@@ -1,2 +1,11 @@
 <h1>Red Jaguars</h1>
 <%= link_to 'New Post', new_post_path %>
+
+<div id="posts">
+  <h2>Posts</h2>
+  <ul>
+    <% @posts.each do |post| %>
+      <li><%= link_to post.title, post %></li>
+    <% end %>
+  </ul>
+</div>
