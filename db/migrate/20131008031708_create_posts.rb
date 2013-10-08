@@ -3,6 +3,8 @@ class CreatePosts < ActiveRecord::Migration
     create_table :posts do |g|
       g.string :title
       g.text :description
+
+      g.timestamps
     end
   end
 
